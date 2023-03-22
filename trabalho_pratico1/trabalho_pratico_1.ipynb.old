@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyP0J61WyHGphFjbYj5lQxoU",
+      "authorship_tag": "ABX9TyPJzgXEf0OBNZcjCMFAIEMG",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -23,7 +23,7 @@
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/macintoxic/BootCampRendaVariavel/blob/main/trabalho_pratico_1/trabalho_pratico_1.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\"https://colab.research.google.com/github/macintoxic/BootCampRendaVariavel/blob/main/trabalho_pratico1/trabalho_pratico_1.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     },
     {
@@ -47,23 +47,7 @@
     {
       "cell_type": "code",
       "source": [
-        "#instala as bibliotecas necessárias.\n",
-        "#no google colab elas já estão instaladas por padrão\n",
-        "#!pip install pandas matplotlib openpyxl"
-      ],
-      "metadata": {
-        "id": "ZAm3gqmhE7Eq"
-      },
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
         "#cria as pastas\n",
-        "# Este notebook foi criado no google colab. \n",
-        "# Verifique as pastas que você tem acesso para baixar os arquivos.\n",
-        "!mkdir /content\n",
         "!mkdir /content/01_Bruto\n",
         "!mkdir /content/02_Limpo\n",
         "!mkdir /content/03_Saidas\n",
@@ -72,49 +56,51 @@
         "!wget -O /content/02_Limpo/statusinvest-busca-avancada2.xlsx https://github.com/macintoxic/BootCampRendaVariavel/raw/main/trabalho_pratico1/02_Limpo/statusinvest-busca-avancada2.xlsx"
       ],
       "metadata": {
-        "id": "IVuBqrFO2OjW",
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
-        "outputId": "548793e5-36c0-40b8-ee33-ab2dfc80b55b"
+        "id": "IVuBqrFO2OjW",
+        "outputId": "c1890ecc-d150-4338-b75a-261c792815f4"
       },
-      "execution_count": null,
+      "execution_count": 192,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "--2023-03-21 15:30:03--  https://github.com/macintoxic/BootCampRendaVariavel/raw/main/trabalho_pratico1/01_Bruto/statusinvest-busca-avancada.csv\n",
-            "Resolving github.com (github.com)... 140.82.113.4\n",
-            "Connecting to github.com (github.com)|140.82.113.4|:443... connected.\n",
+            "mkdir: cannot create directory ‘/content/02_Limpo’: File exists\n",
+            "mkdir: cannot create directory ‘/content/03_Saidas’: File exists\n",
+            "--2023-03-20 17:50:03--  https://github.com/macintoxic/BootCampRendaVariavel/raw/main/trabalho_pratico1/01_Bruto/statusinvest-busca-avancada.csv\n",
+            "Resolving github.com (github.com)... 140.82.114.4\n",
+            "Connecting to github.com (github.com)|140.82.114.4|:443... connected.\n",
             "HTTP request sent, awaiting response... 302 Found\n",
             "Location: https://raw.githubusercontent.com/macintoxic/BootCampRendaVariavel/main/trabalho_pratico1/01_Bruto/statusinvest-busca-avancada.csv [following]\n",
-            "--2023-03-21 15:30:04--  https://raw.githubusercontent.com/macintoxic/BootCampRendaVariavel/main/trabalho_pratico1/01_Bruto/statusinvest-busca-avancada.csv\n",
-            "Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.109.133, ...\n",
-            "Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.\n",
+            "--2023-03-20 17:50:03--  https://raw.githubusercontent.com/macintoxic/BootCampRendaVariavel/main/trabalho_pratico1/01_Bruto/statusinvest-busca-avancada.csv\n",
+            "Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.109.133, ...\n",
+            "Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.\n",
             "HTTP request sent, awaiting response... 200 OK\n",
             "Length: 38683 (38K) [text/plain]\n",
             "Saving to: ‘/content/01_Bruto/statusinvest-busca-avancada.csv’\n",
             "\n",
             "/content/01_Bruto/s 100%[===================>]  37.78K  --.-KB/s    in 0.003s  \n",
             "\n",
-            "2023-03-21 15:30:04 (14.6 MB/s) - ‘/content/01_Bruto/statusinvest-busca-avancada.csv’ saved [38683/38683]\n",
+            "2023-03-20 17:50:03 (11.4 MB/s) - ‘/content/01_Bruto/statusinvest-busca-avancada.csv’ saved [38683/38683]\n",
             "\n",
-            "--2023-03-21 15:30:04--  https://github.com/macintoxic/BootCampRendaVariavel/raw/main/trabalho_pratico1/02_Limpo/statusinvest-busca-avancada2.xlsx\n",
-            "Resolving github.com (github.com)... 140.82.114.3\n",
-            "Connecting to github.com (github.com)|140.82.114.3|:443... connected.\n",
+            "--2023-03-20 17:50:03--  https://github.com/macintoxic/BootCampRendaVariavel/raw/main/trabalho_pratico1/02_Limpo/statusinvest-busca-avancada2.xlsx\n",
+            "Resolving github.com (github.com)... 140.82.114.4\n",
+            "Connecting to github.com (github.com)|140.82.114.4|:443... connected.\n",
             "HTTP request sent, awaiting response... 302 Found\n",
             "Location: https://raw.githubusercontent.com/macintoxic/BootCampRendaVariavel/main/trabalho_pratico1/02_Limpo/statusinvest-busca-avancada2.xlsx [following]\n",
-            "--2023-03-21 15:30:04--  https://raw.githubusercontent.com/macintoxic/BootCampRendaVariavel/main/trabalho_pratico1/02_Limpo/statusinvest-busca-avancada2.xlsx\n",
-            "Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.108.133, 185.199.110.133, ...\n",
-            "Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.\n",
+            "--2023-03-20 17:50:03--  https://raw.githubusercontent.com/macintoxic/BootCampRendaVariavel/main/trabalho_pratico1/02_Limpo/statusinvest-busca-avancada2.xlsx\n",
+            "Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...\n",
+            "Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.\n",
             "HTTP request sent, awaiting response... 200 OK\n",
             "Length: 128777 (126K) [application/octet-stream]\n",
             "Saving to: ‘/content/02_Limpo/statusinvest-busca-avancada2.xlsx’\n",
             "\n",
-            "/content/02_Limpo/s 100%[===================>] 125.76K  --.-KB/s    in 0.01s   \n",
+            "/content/02_Limpo/s 100%[===================>] 125.76K  --.-KB/s    in 0.02s   \n",
             "\n",
-            "2023-03-21 15:30:05 (9.18 MB/s) - ‘/content/02_Limpo/statusinvest-busca-avancada2.xlsx’ saved [128777/128777]\n",
+            "2023-03-20 17:50:03 (5.83 MB/s) - ‘/content/02_Limpo/statusinvest-busca-avancada2.xlsx’ saved [128777/128777]\n",
             "\n"
           ]
         }
@@ -141,12 +127,12 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 334
+          "height": 314
         },
         "id": "EcM4YCn4T6Mx",
-        "outputId": "5ff5a249-fd86-48d7-83cf-e4245179e9ea"
+        "outputId": "051d0b56-99ba-4e96-f84e-b0e3d08038c9"
       },
-      "execution_count": null,
+      "execution_count": 182,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -184,7 +170,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-1e34795a-2d0e-4245-a32c-42bbc2a31c4c\">\n",
+              "  <div id=\"df-edc222ea-a9ae-45f4-900e-f97bd0b12caf\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -352,7 +338,7 @@
               "</table>\n",
               "<p>5 rows × 30 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-1e34795a-2d0e-4245-a32c-42bbc2a31c4c')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-edc222ea-a9ae-45f4-900e-f97bd0b12caf')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -403,12 +389,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-1e34795a-2d0e-4245-a32c-42bbc2a31c4c button.colab-df-convert');\n",
+              "          document.querySelector('#df-edc222ea-a9ae-45f4-900e-f97bd0b12caf button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-1e34795a-2d0e-4245-a32c-42bbc2a31c4c');\n",
+              "          const element = document.querySelector('#df-edc222ea-a9ae-45f4-900e-f97bd0b12caf');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -431,7 +417,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 3
+          "execution_count": 182
         }
       ]
     },
@@ -456,9 +442,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "mIRdLMiPVaPY",
-        "outputId": "6c10a3e2-2f61-4f7f-e133-01e19e11a6e2"
+        "outputId": "da4cb92a-04a3-4924-cc57-e93f9adf954e"
       },
-      "execution_count": null,
+      "execution_count": 183,
       "outputs": [
         {
           "output_type": "stream",
@@ -490,9 +476,9 @@
           "height": 363
         },
         "id": "qegH6vW8Wykv",
-        "outputId": "6fb273a8-1c52-4498-b5d6-99864261379f"
+        "outputId": "aae33f9d-b4e1-4eb4-868d-30c375cd1b63"
       },
-      "execution_count": null,
+      "execution_count": 184,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -512,7 +498,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-02a625e7-1295-486f-96a5-fdd380db3a10\">\n",
+              "  <div id=\"df-a5815310-625e-4845-823c-c7f654e942f3\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -590,7 +576,7 @@
               "  </tbody>\n",
               "</table>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-02a625e7-1295-486f-96a5-fdd380db3a10')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-a5815310-625e-4845-823c-c7f654e942f3')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -641,12 +627,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-02a625e7-1295-486f-96a5-fdd380db3a10 button.colab-df-convert');\n",
+              "          document.querySelector('#df-a5815310-625e-4845-823c-c7f654e942f3 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-02a625e7-1295-486f-96a5-fdd380db3a10');\n",
+              "          const element = document.querySelector('#df-a5815310-625e-4845-823c-c7f654e942f3');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -669,7 +655,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 5
+          "execution_count": 184
         }
       ]
     },
@@ -694,9 +680,9 @@
           "height": 363
         },
         "id": "9jtbRwe9XUm2",
-        "outputId": "8ff2d6c5-68fb-4167-9503-7202d07667d3"
+        "outputId": "f9288073-af2d-4f0f-8bbd-c2a03c60ad6b"
       },
-      "execution_count": null,
+      "execution_count": 185,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -716,7 +702,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-25e24f93-d024-4393-8086-4ba26dd4cb7d\">\n",
+              "  <div id=\"df-c6451140-9aa8-403c-a241-552e58eee8d0\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -794,7 +780,7 @@
               "  </tbody>\n",
               "</table>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-25e24f93-d024-4393-8086-4ba26dd4cb7d')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-c6451140-9aa8-403c-a241-552e58eee8d0')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -845,12 +831,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-25e24f93-d024-4393-8086-4ba26dd4cb7d button.colab-df-convert');\n",
+              "          document.querySelector('#df-c6451140-9aa8-403c-a241-552e58eee8d0 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-25e24f93-d024-4393-8086-4ba26dd4cb7d');\n",
+              "          const element = document.querySelector('#df-c6451140-9aa8-403c-a241-552e58eee8d0');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -873,7 +859,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 6
+          "execution_count": 185
         }
       ]
     },
@@ -906,9 +892,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "hv7vXPFXZolT",
-        "outputId": "76261356-2b06-499b-b2c7-5633bc456830"
+        "outputId": "1be321d5-b817-4b56-87dd-1dcfb550413e"
       },
-      "execution_count": null,
+      "execution_count": 186,
       "outputs": [
         {
           "output_type": "stream",
@@ -940,9 +926,9 @@
           "height": 424
         },
         "id": "pcTNsQjyaIx2",
-        "outputId": "0f6ff14e-8980-452a-cd70-528a21eafa9f"
+        "outputId": "9831f61f-1acd-4617-f3cf-617f10e93885"
       },
-      "execution_count": null,
+      "execution_count": 187,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -965,7 +951,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-4909d271-d287-4342-bb0a-8dfc47203960\">\n",
+              "  <div id=\"df-fea66fa7-3565-48da-b87a-6fcfe1384b40\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -1049,7 +1035,7 @@
               "</table>\n",
               "<p>419 rows × 2 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-4909d271-d287-4342-bb0a-8dfc47203960')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-fea66fa7-3565-48da-b87a-6fcfe1384b40')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -1100,12 +1086,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-4909d271-d287-4342-bb0a-8dfc47203960 button.colab-df-convert');\n",
+              "          document.querySelector('#df-fea66fa7-3565-48da-b87a-6fcfe1384b40 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-4909d271-d287-4342-bb0a-8dfc47203960');\n",
+              "          const element = document.querySelector('#df-fea66fa7-3565-48da-b87a-6fcfe1384b40');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -1128,7 +1114,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 8
+          "execution_count": 187
         }
       ]
     },
@@ -1152,9 +1138,9 @@
           "height": 424
         },
         "id": "S79a-P7JcMUe",
-        "outputId": "339696d4-015b-4af8-a17c-8858181e5d4c"
+        "outputId": "9f2e6b22-f6f1-42e6-c201-a43f59daa070"
       },
-      "execution_count": null,
+      "execution_count": 188,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1177,7 +1163,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-e2737d98-4c93-485d-b513-bb2342c99612\">\n",
+              "  <div id=\"df-d481a6bf-4887-4941-9303-42235f964ebc\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -1261,7 +1247,7 @@
               "</table>\n",
               "<p>353 rows × 2 columns</p>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-e2737d98-4c93-485d-b513-bb2342c99612')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-d481a6bf-4887-4941-9303-42235f964ebc')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -1312,12 +1298,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-e2737d98-4c93-485d-b513-bb2342c99612 button.colab-df-convert');\n",
+              "          document.querySelector('#df-d481a6bf-4887-4941-9303-42235f964ebc button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-e2737d98-4c93-485d-b513-bb2342c99612');\n",
+              "          const element = document.querySelector('#df-d481a6bf-4887-4941-9303-42235f964ebc');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -1340,7 +1326,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 9
+          "execution_count": 188
         }
       ]
     },
@@ -1362,7 +1348,7 @@
       "metadata": {
         "id": "w4ne2MJ8fun8"
       },
-      "execution_count": null,
+      "execution_count": 189,
       "outputs": []
     },
     {
@@ -1389,9 +1375,9 @@
           "height": 315
         },
         "id": "AhDVQVHNgzkZ",
-        "outputId": "3d913517-bb49-4446-fd93-169d092b6150"
+        "outputId": "bb160885-9dd3-4477-8efc-6ff156134c2c"
       },
-      "execution_count": null,
+      "execution_count": 190,
       "outputs": [
         {
           "output_type": "display_data",
@@ -1425,42 +1411,7 @@
       "metadata": {
         "id": "BDSD97EhyIog"
       },
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "df[df['P/L'] > 0]['TICKER'].count()"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "H0ic2hikyicO",
-        "outputId": "5263a159-54e1-4107-97f7-5c9495ff057d"
-      },
-      "execution_count": null,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/plain": [
-              "419"
-            ]
-          },
-          "metadata": {},
-          "execution_count": 19
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [],
-      "metadata": {
-        "id": "z4aH5QDQzGY1"
-      },
-      "execution_count": null,
+      "execution_count": 191,
       "outputs": []
     }
   ]
